@@ -2,8 +2,10 @@
   "name": "shema",
   "version": "1.0.0",
   "description": "Shema MERN Stack Ecommerce application",
-  "main": "index.js",
+  "main": "server/server.js",
+  "packageManager": "npm@10.2.0",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
