@@ -1,20 +1,15 @@
-import { useEffect } from 'react';
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SearchContext } from '../../Context/SearchContext';
 import './index.css'
 
 const Search = () => {
     const search = useContext(SearchContext)
-    const [ searchParam, setSearchParam ] = useSearchParams()
-
-    const searchQuery = {
-        query: search.searchQuery
-    }
+    const [, setSearchParam] = useSearchParams()
 
     useEffect(() => {
-        setSearchParam(searchQuery, { replace: true })
-    }, [searchQuery.query])
+        setSearchParam({ query: search.searchQuery }, { replace: true })
+    }, [search.searchQuery, setSearchParam])
 
     return ( 
         <div className="search__container">
